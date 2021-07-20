@@ -17,11 +17,12 @@ const Dropdown = () => {
         <DropdownMenu>
           {linksData.map((item, index) => {
             return (
-              <DropdownLink to={item.link} key={index}>
+              <DropdownLink to={item.path} key={index}>
                 {item.title}
               </DropdownLink>
             );
           })}
+          <SignIn to='/card'>sign in</SignIn>
         </DropdownMenu>
       </div>
     </DropdownContainer>
@@ -35,12 +36,12 @@ const DropdownContainer = styled.div`
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: #cd853f;
+  background: var(--main-color);
   display: grid;
   align-items: center;
   top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
   left: 0;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
 `;
 const CloseBtn = styled.div`
@@ -72,11 +73,23 @@ const DropdownLink = styled(Link)`
   list-style: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  text-transform: capitalize;
   &:hover {
     color: #121212;
   }
 `;
-const BtnWrapper = styled.div`
+const SignIn = styled(Link)`
+  color: #fff;
   display: flex;
+  align-items: center;
   justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  width: 200px;
+  height: 50px;
+  text-transform: capitalize;
+  transition: 0.5s;
+  margin: 3rem auto 0;
+  background: #000;
+  letter-spacing: 1px;
 `;

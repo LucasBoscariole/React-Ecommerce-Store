@@ -10,6 +10,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Error from './pages/Error';
 import Footer from './pages/Footer';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route exact path='/contact'>
           <Contact />
+        </Route>
+        <Route exact path='/card'>
+          <Cart />
         </Route>
         <Route path='*'>
           <Error />

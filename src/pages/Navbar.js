@@ -12,7 +12,6 @@ const Navbar = () => {
     <Wrapper>
       <NavWrapper>
         <Logo to='/'>COLD</Logo>
-        <MenuBars onClick={toggle} />
         <NavMenu>
           {linksData.map((item, index) => {
             return (
@@ -23,9 +22,12 @@ const Navbar = () => {
           })}
         </NavMenu>
         <ContainerCart>
-          <SignIn>sign in</SignIn>
-          <Bag />
+          <SignIn to='/card'>sign in</SignIn>
+          <Bag>
+            <HiOutlineShoppingBag />
+          </Bag>
         </ContainerCart>
+        <MenuBars onClick={toggle} />
       </NavWrapper>
     </Wrapper>
   );
@@ -42,7 +44,8 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  background: #fff;
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.25);
 `;
 
 const NavWrapper = styled.div`
@@ -52,11 +55,10 @@ const NavWrapper = styled.div`
   justify-content: space-between;
   z-index: 100;
   transition: 0.5s;
-  background: #bababa;
 `;
 
 const NavLink = css`
-  color: #fff;
+  color: #000;
   display: flex;
   align-items: center;
   height: 100%;
@@ -73,14 +75,11 @@ const MenuBars = styled(FaBars)`
   display: none;
   @media screen and (max-width: 768px) {
     display: block;
-    color: #fff;
+    color: #000;
     cursor: pointer;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
+    width: 30px;
+    height: 30px;
+    margin-top: 1.1rem;
   }
 `;
 
@@ -110,19 +109,32 @@ const ContainerCart = styled.div`
   justify-content: space-between;
   width: 15%;
   height: 100%;
+  @media screen and (max-width: 768px) {
+    margin: 0 1rem 0 auto;
+  }
 `;
 
 const SignIn = styled(Link)`
-  color: #fff;
-  background: red;
+  color: #000;
+  border: 1px solid #000;
   display: flex;
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2rem;
+  text-transform: capitalize;
+  transition: 0.5s;
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
-const Bag = styled(HiOutlineShoppingBag)`
-  color: red;
-  font-size: 1.2rem;
+const Bag = styled(Link)`
+  color: #000;
+  font-size: 2rem;
+  text-decoration: none;
 `;
