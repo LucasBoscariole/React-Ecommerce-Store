@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import { linksData } from '../data/NavData';
 import { FaBars } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
-import { useGlobalContext } from '../context/context';
+import { connect } from 'react-redux';
 
-const Navbar = () => {
-  const { toggle } = useGlobalContext();
+const Navbar = ({ dispatch }) => {
   return (
     <Wrapper>
       <NavWrapper>
@@ -27,13 +26,18 @@ const Navbar = () => {
             <HiOutlineShoppingBag />
           </Bag>
         </ContainerCart>
-        <MenuBars onClick={toggle} />
+        <MenuBars onClick={() => dispatch({ type: 'NAVBAR_OPEN' })} />
       </NavWrapper>
     </Wrapper>
   );
 };
 
-export default Navbar;
+const mapStateToProps = (storedData) => {
+  const { toggle } = storedData;
+  return { toggle };
+};
+
+export default connect(mapStateToProps)(Navbar);
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -45,7 +49,7 @@ const Wrapper = styled.nav`
   align-items: center;
   justify-content: center;
   background: #fff;
-  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25); */
 `;
 
 const NavWrapper = styled.div`
@@ -54,7 +58,7 @@ const NavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   z-index: 100;
-  transition: 0.5s;
+  transition: 0.3s;
 `;
 
 const NavLink = css`

@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { AppProvider } from './context/context';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './redux/reducer';
+
+const storedData = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppProvider>
+    <Provider store={storedData}>
       <App />
-    </AppProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import { linksData } from '../data/NavData';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
-import { useGlobalContext } from '../context/context';
+import { connect } from 'react-redux';
 
-const Dropdown = () => {
-  const { toggle, isOpen } = useGlobalContext();
-
+const Dropdown = ({ toggle, dispatch }) => {
   return (
-    <DropdownContainer isOpen={isOpen} onClick={toggle}>
-      <CloseBtn onClick={toggle}>
+    <DropdownContainer
+      isOpen={toggle}
+      onClick={() => dispatch({ type: 'NAVBAR_CLOSE' })}
+    >
+      <CloseBtn onClick={() => dispatch({ type: 'NAVBAR_CLOSE' })}>
         <CloseIcon />
       </CloseBtn>
       <div>
@@ -29,7 +30,12 @@ const Dropdown = () => {
   );
 };
 
-export default Dropdown;
+const mapStateToProps = (storedData) => {
+  const { toggle } = storedData;
+  return { toggle };
+};
+
+export default connect(mapStateToProps)(Dropdown);
 
 const DropdownContainer = styled.div`
   position: fixed;
@@ -41,7 +47,7 @@ const DropdownContainer = styled.div`
   align-items: center;
   top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
   left: 0;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
 `;
 const CloseBtn = styled.div`
@@ -54,7 +60,7 @@ const CloseBtn = styled.div`
   outline: none;
 `;
 const CloseIcon = styled(FaTimes)`
-  color: #121212;
+  color: #fff;
 `;
 const DropdownMenu = styled.div`
   display: grid;
