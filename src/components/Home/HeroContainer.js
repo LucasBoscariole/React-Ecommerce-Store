@@ -72,7 +72,7 @@ const HeroContainer = () => {
 export default HeroContainer;
 
 const HeroSection = styled.section`
-  height: 85vh;
+  height: 90vh;
   max-height: 1100px;
   position: relative;
   overflow: hidden;
@@ -109,7 +109,7 @@ const HeroSlider = styled.div`
     position: absolute;
     z-index: 2;
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     top: 70px;
     left: 0;
     overflow: hidden;
@@ -122,7 +122,7 @@ const HeroImage = styled.img`
   top: 70px;
   left: 0;
   width: 100vw;
-  height: 85vh;
+  height: 90vh;
   object-fit: cover;
 `;
 const HeroContent = styled.div`
