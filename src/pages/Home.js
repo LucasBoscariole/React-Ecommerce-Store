@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
+import HeroContainer from '../components/Home/HeroContainer';
 
 const Home = () => {
- return (
-  <h1>
-   Home
-  </h1>
- )
-}
+  return <HeroContainer />;
+};
 
-export default Home
+export default Home;

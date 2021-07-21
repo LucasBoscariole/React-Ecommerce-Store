@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
+import Hero from '../components/Hero';
+import Image from '../images/imageHero2.jpg';
 
 const Shop = () => {
- return (
-   <h1>
-   Shop
-  </h1>
- )
-}
+  return <Hero image={Image} title={'Shop'} />;
+};
 
-export default Shop
+export default Shop;

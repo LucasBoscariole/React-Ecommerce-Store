@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { linksData } from '../data/NavData';
 import { FaBars } from 'react-icons/fa';
-import { HiOutlineShoppingBag } from 'react-icons/hi';
+import { IoBagHandle } from 'react-icons/io5';
 import { connect } from 'react-redux';
 
 const Navbar = ({ dispatch }) => {
@@ -14,7 +14,7 @@ const Navbar = ({ dispatch }) => {
         <NavMenu>
           {linksData.map((item, index) => {
             return (
-              <NavMenuLinks to={item.link} key={index}>
+              <NavMenuLinks to={item.path} key={index}>
                 {item.title}
               </NavMenuLinks>
             );
@@ -23,7 +23,7 @@ const Navbar = ({ dispatch }) => {
         <ContainerCart>
           <SignIn to='/card'>sign in</SignIn>
           <Bag>
-            <HiOutlineShoppingBag />
+            <IoBagHandle />
           </Bag>
         </ContainerCart>
         <MenuBars onClick={() => dispatch({ type: 'NAVBAR_OPEN' })} />
@@ -49,6 +49,7 @@ const Wrapper = styled.nav`
   align-items: center;
   justify-content: center;
   background: #fff;
+  z-index: 100;
   /* box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25); */
 `;
 
