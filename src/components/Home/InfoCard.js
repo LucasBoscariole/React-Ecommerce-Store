@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { cardInfoData } from '../../data/CardsInfoData';
-
+import { Link } from 'react-router-dom';
 const InfoCard = () => {
   return (
     <Wrapper>
@@ -11,11 +11,7 @@ const InfoCard = () => {
             <CardContainer key={index}>
               <img src={item.img} alt={item.alt} />
               <div className='black'></div>
-              <Card>
-                <h4>{item.header}</h4>
-                <h2>{item.title}</h2>
-                <p>{item.desc}</p>
-              </Card>
+              <Card to={item.path}>{item.title}</Card>
             </CardContainer>
           );
         })}
@@ -32,9 +28,6 @@ const Wrapper = styled.section`
   height: 50vh;
   @media screen and (max-width: 768px) {
     height: 55vh;
-  }
-  @media screen and (max-width: 300px) {
-    height: 70vh;
   }
 `;
 const Container = styled.article`
@@ -78,48 +71,26 @@ const CardContainer = styled.div`
     width: 100%;
     height: 15vh;
   }
-  @media screen and (max-width: 300px) {
-    height: 20vh;
-  }
 `;
 
-const Card = styled.div`
-  width: 75%;
-  display: block;
-  margin: auto 0;
+const Card = styled(Link)`
+  width: 175px;
+  height: 50px;
+  border: 1px solid #fff;
+  background: #f7f7f7;
+  color: var(--main-color);
+  transition: 0.3s;
   z-index: 1;
-  h4 {
-    color: #f7f7f7;
-    letter-spacing: -1.2px;
-    margin-bottom: 0.5rem;
-  }
-  h2 {
-    font-size: 2rem;
+  margin: auto 0;
+  text-decoration: none;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: var(--main-color);
     color: #fff;
-    letter-spacing: 1px;
-    font-family: 'Cinzel', serif;
-    margin-bottom: 0.5rem;
-    font-weight: bolder;
-  }
-  p {
-    width: 80%;
-    color: #f7f7f7;
-    letter-spacing: -0.5px;
   }
   @media screen and (max-width: 768px) {
-    width: 95%;
-    h4 {
-      font-size: 0.7rem;
-      margin-bottom: 0.3rem;
-      font-weight: 400;
-    }
-    h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-    }
-    p {
-      width: 100%;
-      font-size: 0.65rem;
-    }
   }
 `;

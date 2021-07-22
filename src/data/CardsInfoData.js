@@ -4,23 +4,20 @@ import image3 from '../images/cardBackground3.jpg';
 
 export const cardInfoData = [
   {
-    header: 'HOT',
-    title: '50% DISCOUNT',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae unde autem iusto nisi nesciunt maiores cupiditate quos dolorum ipsa totam!',
+    title: 'sun glasses',
+    path: '/shop',
     img: image1,
     alt: 'sunglass',
   },
   {
-    header: 'NEW COLLECTION',
-    title: 'BRAND NEW COLLECTION',
-    desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, numquam. Dolorum sapiente itaque eius excepturi laborum neque provident laboriosam reprehenderit!',
+    title: 'new collections',
+    path: '/shop',
     img: image2,
     alt: 'purse',
   },
   {
-    header: 'WOMAN DRESS',
-    title: 'WOMAN DRESSES FROM USA',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quos rerum ipsum beatae dolor illo aliquid sed incidunt obcaecati delectus.  ',
+    title: 'woman dresses',
+    path: '/shop',
     img: image3,
     alt: 'dress',
   },
