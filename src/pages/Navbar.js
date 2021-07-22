@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { linksData } from '../data/NavData';
@@ -7,8 +7,24 @@ import { IoBagHandle } from 'react-icons/io5';
 import { connect } from 'react-redux';
 
 const Navbar = ({ dispatch }) => {
+  //NavBar Background
+  const [navBarBackground, setNavBarBackground] = useState(false);
+  const changeBackground = () => {
+    if (window.scrollY >= 60) {
+      setNavBarBackground(true);
+    } else {
+      setNavBarBackground(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeBackground);
+    return () => window.removeEventListener('scroll', changeBackground);
+  }, []);
+  //NavBar Background
+
   return (
-    <Wrapper>
+    <Wrapper fixedNav={navBarBackground}>
       <NavWrapper>
         <Logo to='/'>COLD</Logo>
         <NavMenu>
@@ -50,7 +66,9 @@ const Wrapper = styled.nav`
   justify-content: center;
   background: #fff;
   z-index: 100;
-  /* box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25); */
+  transition: 0.5s;
+  box-shadow: ${({ fixedNav }) =>
+    fixedNav ? '0px 0px 20px 2px rgba(0, 0, 0, 0.4)' : null};
 `;
 
 const NavWrapper = styled.div`

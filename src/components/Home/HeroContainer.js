@@ -137,16 +137,17 @@ const HeroContent = styled.div`
     font-weight: 400;
     text-transform: uppercase;
     text-align: left;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.4px;
   }
   h1 {
-    font-size: clamp(1rem, 8vw, 1.8rem);
+    font-size: clamp(1.1rem, 8vw, 2.5rem);
     font-weight: bold;
     text-transform: uppercase;
     text-align: left;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     letter-spacing: 1.2px;
+    font-family: 'Cinzel', serif;
   }
   p {
     margin-bottom: 1.2rem;
