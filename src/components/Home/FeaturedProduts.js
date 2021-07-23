@@ -73,8 +73,9 @@ const FeaturedContainer = styled(Link)`
     color: var(--main-color);
     background: #f2f2f2;
     text-decoration: none;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.05);
     margin-bottom: 3rem;
+    border-radius: 10px;
     img {
       width: 100%;
       height: 45vh;
@@ -86,13 +87,18 @@ const FeaturedContainer = styled(Link)`
     color: var(--main-color);
     background: #f2f2f2;
     text-decoration: none;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
     margin-bottom: 1.5rem;
-    min-height: 35vh;
+    min-height: 25vh;
+    border-radius: 10px;
     img {
       width: 100%;
-      height: 35vh;
+      height: 25vh;
       object-fit: cover;
+    }
+    &:last-child {
+      display: none;
+      visibility: hidden;
     }
   }
 `;
@@ -139,7 +145,7 @@ const LinkTo = styled(Link)`
   height: 45px;
   background: var(--main-color);
   color: #fff;
-  margin: 0.5rem auto 2rem;
+  margin: 0.5rem auto 3rem;
   text-decoration: none;
   transition: 0.3s;
   &:hover {
