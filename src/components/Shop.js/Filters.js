@@ -8,7 +8,6 @@ const Filters = () => {
   const handleOpenFilters = () => {
     return setOpenFilters(!openFilters);
   };
-
   return (
     <Container>
       <Wrapper>
@@ -31,7 +30,39 @@ const Filters = () => {
           </div>
         </FiltersContainer>
       </Wrapper>
-      <FiltersInfoContainer open={openFilters}></FiltersInfoContainer>
+      <FiltersInfoContainer open={openFilters}>
+        <ShortBy open={openFilters}>
+          <h3>Short By</h3>
+          <p>Popularity</p>
+          <p>Newness</p>
+          <p>Price: Low to High</p>
+          <p>Price: High to Low</p>
+        </ShortBy>
+        <ShortBy open={openFilters}>
+          <h3>Category</h3>
+          <p>All</p>
+          <p>Woman</p>
+          <p>Men</p>
+          <p>Watches</p>
+          <p>Sunglasses</p>
+        </ShortBy>
+        <ShortBy open={openFilters}>
+          <h3>Price</h3>
+          <p>$0.00 - $50.00</p>
+          <p>$50.00 - $100.00</p>
+          <p>$100.00 - $150.00</p>
+          <p>$200.00 - $200.00</p>
+          <p>$200.00+</p>
+        </ShortBy>
+        <ShortBy open={openFilters}>
+          <h3>Brand</h3>
+          <p>All</p>
+          <p>Furia</p>
+          <p>Astralis</p>
+          <p>SK</p>
+          <p>Immortals</p>
+        </ShortBy>
+      </FiltersInfoContainer>
     </Container>
   );
 };
@@ -41,7 +72,7 @@ export default Filters;
 const Container = styled.section`
   width: 100%;
   min-height: 10vh;
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: block;
 `;
 
@@ -64,6 +95,9 @@ const TextContainer = styled.div`
     &:first-child {
       font-weight: 600;
     }
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 const FiltersContainer = styled.div`
@@ -143,16 +177,59 @@ const FiltersContainer = styled.div`
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const FiltersInfoContainer = styled.div`
-  width: 70%;
-  transition: 0.2s;
-  height: ${({ open }) => (open ? '30vh' : '0')};
-  background: var(--second-color);
-  margin: 1rem auto 0;
+  width: 80%;
+  transition: 0.3s;
+  max-height: ${({ open }) => (open ? '60vh' : '0vh')};
+  background: var(--grey);
+  overflow: hidden;
+  margin: 1rem auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: start;
+  justify-content: space-around;
+  flex-wrap: wrap;
   border-radius: 15px;
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
+`;
+
+const ShortBy = styled.div`
+  transition: 1s;
+  display: block;
+  width: 15%;
+  margin-top: 1.5rem;
+  h3 {
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    cursor: default;
+  }
+  p {
+    color: #616161;
+    font-weight: 400;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: #000;
+    }
+  }
+  .active {
+    color: red;
+  }
+  @media screen and (max-width: 768px) {
+    width: 40%;
+    h3 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
 `;
