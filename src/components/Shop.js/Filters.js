@@ -31,14 +31,14 @@ const Filters = () => {
         </FiltersContainer>
       </Wrapper>
       <FiltersInfoContainer open={openFilters}>
-        <ShortBy open={openFilters}>
+        <ShortBy>
           <h3>Short By</h3>
           <p>Popularity</p>
           <p>Newness</p>
           <p>Price: Low to High</p>
           <p>Price: High to Low</p>
         </ShortBy>
-        <ShortBy open={openFilters}>
+        <ShortBy>
           <h3>Category</h3>
           <p>All</p>
           <p>Woman</p>
@@ -46,7 +46,7 @@ const Filters = () => {
           <p>Watches</p>
           <p>Sunglasses</p>
         </ShortBy>
-        <ShortBy open={openFilters}>
+        <ShortBy>
           <h3>Price</h3>
           <p>$0.00 - $50.00</p>
           <p>$50.00 - $100.00</p>
@@ -54,7 +54,7 @@ const Filters = () => {
           <p>$200.00 - $200.00</p>
           <p>$200.00+</p>
         </ShortBy>
-        <ShortBy open={openFilters}>
+        <ShortBy >
           <h3>Brand</h3>
           <p>All</p>
           <p>Furia</p>
