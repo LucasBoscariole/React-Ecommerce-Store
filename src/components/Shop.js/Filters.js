@@ -2,20 +2,31 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BsFilter, BsSearch } from 'react-icons/bs';
 import { IoClose } from 'react-icons/io5';
+import { useFilterContext } from '../../reducer/context';
+import {
+  categoryData,
+  shortbyData,
+  priceData,
+  brandData,
+} from '../../data/FiltersData';
 
 const Filters = () => {
   const [openFilters, setOpenFilters] = useState(false);
   const handleOpenFilters = () => {
     return setOpenFilters(!openFilters);
   };
+  const {
+    filter: { search, sort, category, price, brand },
+    updateFilters,
+  } = useFilterContext();
   return (
     <Container>
       <Wrapper>
         <TextContainer>
-          <h3>All Products</h3>
-          <h3>Women</h3>
-          <h3>Men</h3>
-          <h3>Acessories</h3>
+          <button>All Products</button>
+          <button>Women</button>
+          <button>Men</button>
+          <button>Acessories</button>
         </TextContainer>
         <FiltersContainer open={openFilters}>
           <button onClick={handleOpenFilters} className='filter'>
@@ -23,7 +34,13 @@ const Filters = () => {
             filters
           </button>
           <div>
-            <input type='text' placeholder='Search' />
+            <input
+              type='text'
+              name='search'
+              placeholder='Search'
+              value={search}
+              onChange={updateFilters}
+            />
             <button type='submit'>
               <BsSearch />
             </button>
@@ -33,34 +50,59 @@ const Filters = () => {
       <FiltersInfoContainer open={openFilters}>
         <ShortBy>
           <h3>Short By</h3>
-          <p>Popularity</p>
-          <p>Newness</p>
-          <p>Price: Low to High</p>
-          <p>Price: High to Low</p>
+          {shortbyData.map((item, index) => (
+            <button
+              key={index}
+              onClick={updateFilters}
+              type='button'
+              name='sort'
+              value={sort}
+            >
+              {item.title}
+            </button>
+          ))}
         </ShortBy>
         <ShortBy>
           <h3>Category</h3>
-          <p>All</p>
-          <p>Woman</p>
-          <p>Men</p>
-          <p>Watches</p>
-          <p>Sunglasses</p>
+          {categoryData.map((item, index) => (
+            <button
+              key={index}
+              onClick={updateFilters}
+              type='button'
+              name='category'
+              value={category}
+            >
+              {item.title}
+            </button>
+          ))}
         </ShortBy>
         <ShortBy>
           <h3>Price</h3>
-          <p>$0.00 - $50.00</p>
-          <p>$50.00 - $100.00</p>
-          <p>$100.00 - $150.00</p>
-          <p>$200.00 - $200.00</p>
-          <p>$200.00+</p>
+          {priceData.map((item, index) => (
+            <button
+              key={index}
+              onClick={updateFilters}
+              type='button'
+              name='price'
+              value={price}
+            >
+              {item.title}
+            </button>
+          ))}
         </ShortBy>
-        <ShortBy >
+        <ShortBy>
           <h3>Brand</h3>
-          <p>All</p>
-          <p>Furia</p>
-          <p>Astralis</p>
-          <p>SK</p>
-          <p>Immortals</p>
+          {brandData.map((item, index) => (
+            <button
+              key={index}
+              onClick={updateFilters}
+              type='button'
+              name='brand'
+              value={brand}
+            >
+              {item.title}
+            </button>
+          ))}
         </ShortBy>
       </FiltersInfoContainer>
     </Container>
@@ -89,9 +131,17 @@ const TextContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  h3 {
+  button {
     cursor: pointer;
-    font-weight: 400;
+    display: block;
+    margin: 0.4rem 0 0.4rem 0;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-size: 1.2rem;
     &:first-child {
       font-weight: 600;
     }
@@ -210,12 +260,18 @@ const ShortBy = styled.div`
     margin-bottom: 0.3rem;
     cursor: default;
   }
-  p {
+  button {
     color: #616161;
-    font-weight: 400;
-    margin: 0.5rem 0;
+    display: block;
+    margin: 0.4rem 0 0.4rem 0;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 0.9rem;
+    transition: none.3s;
     &:hover {
       color: #000;
     }

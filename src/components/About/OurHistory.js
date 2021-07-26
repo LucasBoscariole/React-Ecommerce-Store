@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import image from '../../images/background.jpg';
+import image from '../../images/about1.jpg';
 import { Link } from 'react-router-dom';
 
 const OurHistory = () => {

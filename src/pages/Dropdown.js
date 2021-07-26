@@ -3,15 +3,13 @@ import styled from 'styled-components';
 import { linksData } from '../data/NavData';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
-import { connect } from 'react-redux';
+import { useFilterContext } from '../reducer/context';
 
-const Dropdown = ({ toggle, dispatch }) => {
+const Dropdown = () => {
+  const { toggle, isOpen } = useFilterContext();
   return (
-    <DropdownContainer
-      isOpen={toggle}
-      onClick={() => dispatch({ type: 'NAVBAR_CLOSE' })}
-    >
-      <CloseBtn onClick={() => dispatch({ type: 'NAVBAR_CLOSE' })}>
+    <DropdownContainer isOpen={isOpen} onClick={toggle}>
+      <CloseBtn onClick={toggle}>
         <CloseIcon />
       </CloseBtn>
       <div>
@@ -30,12 +28,7 @@ const Dropdown = ({ toggle, dispatch }) => {
   );
 };
 
-const mapStateToProps = (storedData) => {
-  const { toggle } = storedData;
-  return { toggle };
-};
-
-export default connect(mapStateToProps)(Dropdown);
+export default Dropdown;
 
 const DropdownContainer = styled.div`
   position: fixed;

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { linksData } from '../data/NavData';
 import { FaBars } from 'react-icons/fa';
 import { IoBagHandle } from 'react-icons/io5';
-import { connect } from 'react-redux';
+import { useFilterContext } from '../reducer/context';
 
-const Navbar = ({ dispatch }) => {
+const Navbar = () => {
   //NavBar Background
   const [navBarBackground, setNavBarBackground] = useState(false);
   const changeBackground = () => {
@@ -22,7 +22,7 @@ const Navbar = ({ dispatch }) => {
     return () => window.removeEventListener('scroll', changeBackground);
   }, []);
   //NavBar Background
-
+  const { toggle } = useFilterContext();
   return (
     <Wrapper fixedNav={navBarBackground}>
       <NavWrapper>
@@ -42,18 +42,13 @@ const Navbar = ({ dispatch }) => {
             <IoBagHandle />
           </Bag>
         </ContainerCart>
-        <MenuBars onClick={() => dispatch({ type: 'NAVBAR_OPEN' })} />
+        <MenuBars onClick={toggle} />
       </NavWrapper>
     </Wrapper>
   );
 };
 
-const mapStateToProps = (storedData) => {
-  const { toggle } = storedData;
-  return { toggle };
-};
-
-export default connect(mapStateToProps)(Navbar);
+export default Navbar;
 
 const Wrapper = styled.nav`
   position: fixed;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import image from '../../images/background.jpg';
+import image from '../../images/about2.jpg';
 const OurMission = () => {
   return (
     <Wrapper>
