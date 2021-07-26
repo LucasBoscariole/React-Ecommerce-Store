@@ -7,12 +7,13 @@ const filter_reducer = (state, action) => {
       filter: { ...state.filter },
     };
   }
-
   if (action.type === 'UPDATE_FILTERS') {
     const { name, value } = action.payload;
     return { ...state, filter: { ...state.filter, [name]: value } };
   }
   if (action.type === 'FILTER_PRODUCTS') {
+    console.log('Hello');
+
     const { all_products, filtered_products } = state;
     const { search, sort, category, price, brand } = state.filter;
     let tempProducts = [...all_products];
@@ -27,89 +28,104 @@ const filter_reducer = (state, action) => {
       tempProducts = filtered_products.sort((a, b) => {
         return a.popularity - b.popularity;
       });
-    }
-    if (sort === 'Newness') {
-      tempProducts = filtered_products.sort((a, b) => {
-        return a.newness - b.newness;
-      });
-    }
-    if (sort === 'Price: Low to High') {
-      tempProducts = filtered_products.sort((a, b) => {
-        return a.price - b.price;
-      });
-    }
-    if (sort === 'Price: High to Low') {
-      tempProducts = filtered_products.sort((a, b) => {
-        return b.price - a.price;
-      });
+    } else {
+      if (sort === 'Newness') {
+        tempProducts = filtered_products.sort((a, b) => {
+          return a.newness - b.newness;
+        });
+      }
+      if (sort === 'Price: Low to High') {
+        tempProducts = filtered_products.sort((a, b) => {
+          return a.price - b.price;
+        });
+      }
+      if (sort === 'Price: High to Low') {
+        tempProducts = filtered_products.sort((a, b) => {
+          return b.price - a.price;
+        });
+      }
     }
     //
     //
     if (category === 'All') {
       tempProducts = [...all_products];
-    }
-    if (category === 'Woman') {
-      tempProducts = tempProducts.filter(
-        (product) => product.category === category
-      );
-    }
-    if (category === 'Men') {
-      tempProducts = tempProducts.filter(
-        (product) => product.category === category
-      );
-    }
-    if (category === 'Watches') {
-      tempProducts = tempProducts.filter(
-        (product) => product.acessory === category
-      );
-    }
-    if (category === 'Sunglasses') {
-      tempProducts = tempProducts.filter(
-        (product) => product.acessory === category
-      );
+    } else {
+      if (category === 'Woman') {
+        tempProducts = tempProducts.filter(
+          (product) => product.category === category
+        );
+      }
+      if (category === 'Men') {
+        tempProducts = tempProducts.filter(
+          (product) => product.category === category
+        );
+      }
+      if (category === 'Watches') {
+        tempProducts = tempProducts.filter(
+          (product) => product.acessory === category
+        );
+      }
+      if (category === 'Sunglasses') {
+        tempProducts = tempProducts.filter(
+          (product) => product.acessory === category
+        );
+      }
     }
     //
     //
     if (price === 'All') {
-      console.log('All');
-      tempProducts = tempProducts.filter(
-        (product) => product.locality === locality
-      );
-    }
-    if (price === '$0.00 - $50.00') {
-      console.log('$0.00 - $50.00');
-      tempProducts = tempProducts.filter(
-        (product) => product.locality === locality
-      );
-    }
-    if (price === '$50.00 - $100.00') {
-      console.log('$50.00 - $100.00');
-      tempProducts = tempProducts.filter(
-        (product) => product.locality === locality
-      );
-    }
-    if (price === '$100.00 - $150.00') {
-      console.log('$100.00 - $150.00');
-      tempProducts = tempProducts.filter(
-        (product) => product.locality === locality
-      );
-    }
-    if (price === '$150.00+') {
-      console.log('$150.00+');
-      tempProducts = tempProducts.filter(
-        (product) => product.locality === locality
-      );
+      tempProducts = tempProducts.filter((product) => product.price >= 0);
+    } else {
+      if (price === '$0.00 - $50.00') {
+        tempProducts = tempProducts.filter(
+          (product) => 50000 > product.price >= 0
+        );
+      }
+      if (price === '$50.00 - $100.00') {
+        console.log(price);
+        tempProducts = tempProducts.filter(
+          (product) => 100000 > product.price >= 50000
+        );
+      }
+      if (price === '$100.00 - $150.00') {
+        tempProducts = tempProducts.filter(
+          (product) => 150000 > product.price >= 100000
+        );
+      }
+      if (price === '$150.00+') {
+        tempProducts = tempProducts.filter(
+          (product) => product.price >= 150000
+        );
+      }
     }
     //
     //
-    if (brand !== 'All') {
-      tempProducts = tempProducts.filter(
-        (product) => product.locality === locality
-      );
+    if (brand === 'All') {
+      tempProducts = [...all_products];
+    } else {
+      if (brand === 'Furia') {
+        tempProducts = tempProducts.filter(
+          (product) => product.brand === brand
+        );
+      }
+      if (brand !== 'Astralis') {
+        tempProducts = tempProducts.filter(
+          (product) => product.brand === brand
+        );
+      }
+      if (brand !== 'SK') {
+        tempProducts = tempProducts.filter(
+          (product) => product.brand === brand
+        );
+      }
+      if (brand !== 'Immortals') {
+        tempProducts = tempProducts.filter(
+          (product) => product.brand === brand
+        );
+      }
     }
     return { ...state, filtered_products: tempProducts };
   }
-
   throw new Error(`No Matching "${action.type}" - action type`);
 };
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useFilterContext } from '../../reducer/context';
 
 const Products = () => {
+  const { filtered_products: products } = useFilterContext();
   return <Wrapper></Wrapper>;
 };
 
@@ -12,4 +14,7 @@ const Wrapper = styled.section`
   margin: 0 auto;
   min-height: 100vh;
   background: var(--grey);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 `;
