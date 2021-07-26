@@ -37,7 +37,7 @@ const Navbar = ({ dispatch }) => {
           })}
         </NavMenu>
         <ContainerCart>
-          <SignIn to='/card'>sign in</SignIn>
+          <SignIn to='/signin'>sign in</SignIn>
           <Bag>
             <IoBagHandle />
           </Bag>

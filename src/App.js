@@ -11,34 +11,64 @@ import Contact from './pages/Contact';
 import Error from './pages/Error';
 import Footer from './pages/Footer';
 import Cart from './pages/Cart';
+import SignIn from './pages/SignIn';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Dropdown />
       <Switch>
         <Route exact path='/'>
+          <Navbar />
+          <Dropdown />
           <Home />
+          <Footer />
         </Route>
         <Route path='/shop'>
+          <Navbar />
+          <Dropdown />
           <Shop />
+          <Footer />
         </Route>
-        <Route exact path='/shop/:id' children={<SingleProduct />} />
+        <Route
+          exact
+          path='/shop/:id'
+          children={
+            <>
+              <Navbar />
+              <Dropdown />
+              <SingleProduct />
+              <Footer />
+            </>
+          }
+        />
         <Route exact path='/about'>
+          <Navbar />
+          <Dropdown />
           <About />
+          <Footer />
         </Route>
         <Route exact path='/contact'>
+          <Navbar />
+          <Dropdown />
           <Contact />
+          <Footer />
         </Route>
         <Route exact path='/card'>
+          <Navbar />
+          <Dropdown />
           <Cart />
+          <Footer />
+        </Route>
+        <Route exact path='/signin'>
+          <SignIn />
         </Route>
         <Route path='*'>
+          <Navbar />
+          <Dropdown />
           <Error />
+          <Footer />
         </Route>
       </Switch>
-      <Footer />
     </Router>
   );
 }

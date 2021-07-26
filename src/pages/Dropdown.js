@@ -23,7 +23,7 @@ const Dropdown = ({ toggle, dispatch }) => {
               </DropdownLink>
             );
           })}
-          <SignIn to='/card'>sign in</SignIn>
+          <SignIn to='/signin'>sign in</SignIn>
         </DropdownMenu>
       </div>
     </DropdownContainer>
