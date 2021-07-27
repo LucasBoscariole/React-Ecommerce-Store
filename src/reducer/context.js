@@ -5,9 +5,9 @@ import reducer from './reducer';
 const initialState = {
   filtered_products: [],
   all_products: [],
+  sort: 'Popularity',
   filter: {
     search: '',
-    sort: 'Popularity',
     category: 'All',
     price: 'All',
     brand: 'All',
@@ -25,7 +25,14 @@ const FilterProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: 'FILTER_PRODUCTS' });
-  }, [state.filter]);
+    dispatch({ type: 'SORT_PRODUCTS' });
+  }, [state.sort, state.filter]);
+
+  const updateSort = (e) => {
+    const name = e.target.name;
+    const value = e.target.textContent;
+    dispatch({ type: 'UPDATE_SORT', payload: { name, value } });
+  };
 
   const updateFilters = (e) => {
     let name = e.target.name;
@@ -58,6 +65,7 @@ const FilterProvider = ({ children }) => {
         ...state,
         toggle,
         isOpen,
+        updateSort,
         updateFilters,
       }}
     >

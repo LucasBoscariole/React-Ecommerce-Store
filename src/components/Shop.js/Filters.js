@@ -16,9 +16,12 @@ const Filters = () => {
     return setOpenFilters(!openFilters);
   };
   const {
-    filter: { search, sort, category, price, brand },
+    filter: { search, category, price, brand },
     updateFilters,
+    sort,
+    updateSort,
   } = useFilterContext();
+
   return (
     <Container>
       <Wrapper>
@@ -31,6 +34,7 @@ const Filters = () => {
                 name='category'
                 value={category}
                 key={index}
+                className={category === item.title ? 'color' : 'normal'}
               >
                 {item.title}
               </button>
@@ -62,10 +66,11 @@ const Filters = () => {
           {shortbyData.map((item, index) => (
             <button
               key={index}
-              onClick={updateFilters}
+              onClick={updateSort}
               type='button'
               name='sort'
               value={sort}
+              className={sort === item.title ? 'color' : 'normal'}
             >
               {item.title}
             </button>
@@ -80,6 +85,7 @@ const Filters = () => {
               type='button'
               name='category'
               value={category}
+              className={category === item.title ? 'color' : 'normal'}
             >
               {item.title}
             </button>
@@ -94,6 +100,7 @@ const Filters = () => {
               type='button'
               name='price'
               value={price}
+              className={price === item.title ? 'color' : 'normal'}
             >
               {item.title}
             </button>
@@ -108,6 +115,7 @@ const Filters = () => {
               type='button'
               name='brand'
               value={brand}
+              className={brand === item.title ? 'color' : 'normal'}
             >
               {item.title}
             </button>
@@ -263,14 +271,20 @@ const ShortBy = styled.div`
   display: block;
   width: 15%;
   margin-top: 1.5rem;
+  .color {
+    color: #000;
+  }
+  .normal {
+    color: #616161;
+  }
   h3 {
     color: #000;
     font-weight: 600;
     margin-bottom: 0.3rem;
     cursor: default;
+    letter-spacing: 0.5px;
   }
   button {
-    color: #616161;
     display: block;
     margin: 0.4rem 0 0.4rem 0;
     text-transform: capitalize;
@@ -280,10 +294,7 @@ const ShortBy = styled.div`
     letter-spacing: 0.5px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: none.3s;
-    &:hover {
-      color: #000;
-    }
+    transition: 0.3s;
   }
   .active {
     color: red;

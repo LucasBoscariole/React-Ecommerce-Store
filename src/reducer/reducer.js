@@ -7,20 +7,14 @@ const filter_reducer = (state, action) => {
       filter: { ...state.filter },
     };
   }
-  if (action.type === 'UPDATE_FILTERS') {
-    const { name, value } = action.payload;
-    return { ...state, filter: { ...state.filter, [name]: value } };
+
+  if (action.type === 'UPDATE_SORT') {
+    return { ...state, sort: action.payload.value };
   }
-  if (action.type === 'FILTER_PRODUCTS') {
-    const { all_products, filtered_products } = state;
-    const { search, sort, category, price, brand } = state.filter;
-    let tempProducts = [...all_products];
-    if (search) {
-      console.log(search);
-      tempProducts = tempProducts.filter((product) =>
-        product.title.toLowerCase().startsWith(search)
-      );
-    }
+
+  if (action.type === 'SORT_PRODUCTS') {
+    const { sort, filtered_products } = state;
+    let tempProducts = [];
     //
     if (sort === 'Popularity') {
       tempProducts = filtered_products.sort((a, b) => {
@@ -44,9 +38,29 @@ const filter_reducer = (state, action) => {
       }
     }
     //
+    return { ...state, filtered_products: tempProducts };
+  }
+
+  if (action.type === 'UPDATE_FILTERS') {
+    const { name, value } = action.payload;
+    return { ...state, filter: { ...state.filter, [name]: value } };
+  }
+
+  if (action.type === 'FILTER_PRODUCTS') {
+    const { all_products, filtered_products } = state;
+    const { search, category, price, brand } = state.filter;
+    let tempProducts = [...all_products];
+    if (search) {
+      tempProducts = tempProducts.filter((item) =>
+        item.title.toLowerCase().startsWith(search)
+      );
+      console.log(tempProducts);
+    }
     //
     if (category === 'All') {
-      tempProducts = [...all_products];
+      tempProducts = tempProducts.filter(
+        (product) => product.category !== category
+      );
     } else {
       if (category === 'Woman') {
         tempProducts = tempProducts.filter(
@@ -60,34 +74,33 @@ const filter_reducer = (state, action) => {
       }
       if (category === 'Watches') {
         tempProducts = tempProducts.filter(
-          (product) => product.acessory === category
+          (product) => product.category === category
         );
       }
       if (category === 'Sunglasses') {
         tempProducts = tempProducts.filter(
-          (product) => product.acessory === category
+          (product) => product.category === category
         );
       }
     }
-    //
     //
     if (price === 'All') {
       tempProducts = tempProducts.filter((product) => product.price >= 0);
     } else {
       if (price === '$0.00 - $50.00') {
-        tempProducts = tempProducts.filter(
-          (product) => 50000 > product.price >= 0
-        );
+        tempProducts = tempProducts
+          .filter((product) => product.price >= 0)
+          .filter((product) => product.price < 50000);
       }
       if (price === '$50.00 - $100.00') {
-        tempProducts = tempProducts.filter(
-          (product) => 100000 > product.price >= 50000
-        );
+        tempProducts = tempProducts
+          .filter((product) => product.price >= 50000)
+          .filter((product) => product.price < 100000);
       }
       if (price === '$100.00 - $150.00') {
-        tempProducts = tempProducts.filter(
-          (product) => 150000 > product.price >= 100000
-        );
+        tempProducts = tempProducts
+          .filter((product) => product.price >= 100000)
+          .filter((product) => product.price < 150000);
       }
       if (price === '$150.00+') {
         tempProducts = tempProducts.filter(
@@ -96,9 +109,8 @@ const filter_reducer = (state, action) => {
       }
     }
     //
-    //
     if (brand === 'All') {
-      tempProducts = [...all_products];
+      tempProducts = tempProducts.filter((product) => product.brand !== brand);
     } else {
       if (brand === 'Furia') {
         tempProducts = tempProducts.filter(
@@ -121,7 +133,6 @@ const filter_reducer = (state, action) => {
         );
       }
     }
-    console.log(tempProducts);
     return { ...state, filtered_products: tempProducts };
   }
   throw new Error(`No Matching "${action.type}" - action type`);

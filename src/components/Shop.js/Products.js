@@ -6,6 +6,7 @@ const Products = () => {
   const { filtered_products: products } = useFilterContext();
   return (
     <Wrapper>
+      {products.length < 1 ? <h3> no results </h3> : null}
       {products.map((item) => {
         return <img src={item.img} alt={item.title} key={item.id} />;
       })}
