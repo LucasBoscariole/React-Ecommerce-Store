@@ -23,10 +23,19 @@ const Filters = () => {
     <Container>
       <Wrapper>
         <TextContainer>
-          <button>All Products</button>
-          <button>Women</button>
-          <button>Men</button>
-          <button>Acessories</button>
+          {categoryData.map((item, index) => {
+            return (
+              <button
+                onClick={updateFilters}
+                type='button'
+                name='category'
+                value={category}
+                key={index}
+              >
+                {item.title}
+              </button>
+            );
+          })}
         </TextContainer>
         <FiltersContainer open={openFilters}>
           <button onClick={handleOpenFilters} className='filter'>
@@ -127,7 +136,7 @@ const Wrapper = styled.article`
 `;
 
 const TextContainer = styled.div`
-  width: 45%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: space-between;

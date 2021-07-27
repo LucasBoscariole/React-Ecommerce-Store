@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react';
-import { FeaturedProdutsData } from '../data/FeaturedProducts';
+import { ProductsData } from '../data/ProductsData';
 import reducer from './reducer';
 
 const initialState = {
@@ -20,7 +20,7 @@ const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: 'LOAD_PRODUCTS', payload: FeaturedProdutsData });
+    dispatch({ type: 'LOAD_PRODUCTS', payload: ProductsData });
   }, []);
 
   useEffect(() => {

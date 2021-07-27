@@ -1,5 +1,5 @@
 import image1 from '../images/woman/1.jpg';
-import image2 from '../images/men/3.jpg';
+import image2 from '../images/men/5.jpg';
 import image3 from '../images/woman/2.jpg';
 import image4 from '../images/sunglasses/5.jpg';
 import image5 from '../images/men/7.jpg';
