@@ -148,6 +148,14 @@ const TextContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .color {
+    color: #000;
+    font-weight: 600;
+  }
+  .normal {
+    color: #616161;
+    font-weight: 400;
+  }
   button {
     cursor: pointer;
     display: block;
@@ -159,9 +167,6 @@ const TextContainer = styled.div`
     letter-spacing: 0.5px;
     cursor: pointer;
     font-size: 1.2rem;
-    &:first-child {
-      font-weight: 600;
-    }
   }
   @media screen and (max-width: 768px) {
     display: none;

@@ -23,7 +23,8 @@ function App() {
           <Home />
           <Footer />
         </Route>
-        <Route path='/shop'>
+        exact
+        <Route exact path='/shop'>
           <Navbar />
           <Dropdown />
           <Shop />

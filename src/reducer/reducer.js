@@ -54,7 +54,6 @@ const filter_reducer = (state, action) => {
       tempProducts = tempProducts.filter((item) =>
         item.title.toLowerCase().startsWith(search)
       );
-      console.log(tempProducts);
     }
     //
     if (category === 'All') {

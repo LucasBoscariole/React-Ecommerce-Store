@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
-const Stars = ({ stars, reviews }) => {
+const Stars = ({ stars, reviews, trueReviews }) => {
   const tempStars = Array.from({ length: 5 }, (_, index) => {
     const number = index + 0.5;
     return (
@@ -17,9 +17,9 @@ const Stars = ({ stars, reviews }) => {
     );
   });
   return (
-    <Wrapper>
+    <Wrapper trueReviews={trueReviews}>
       <div>{tempStars}</div>
-      <p>({reviews})</p>
+      {trueReviews ? <h5>({reviews}) reviews</h5> : <p>({reviews})</p>}
     </Wrapper>
   );
 };
@@ -27,7 +27,8 @@ const Stars = ({ stars, reviews }) => {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 0.5rem;
+  height: auto;
+  margin: ${(trueReviews) => (true ? '0' : '0.5rem 0')};
   span {
     color: #ffb900;
     font-size: 1.1rem;
@@ -36,9 +37,18 @@ const Wrapper = styled.div`
   div {
     margin-right: 0.5rem;
   }
-  margin-bottom: 0.5rem;
+  p {
+    margin: 0;
+  }
+  h5 {
+    color: var(--grey-darker);
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
   @media screen and (max-width: 990px) {
-    margin: 0.15rem 0;
+    margin: ${(trueReviews) => (true ? '0' : '0.15rem 0')};
     span {
       font-size: 0.8rem;
       margin-right: 0.1rem;

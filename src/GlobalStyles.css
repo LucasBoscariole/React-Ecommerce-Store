@@ -18,5 +18,6 @@ body {
   --fourth-color: #c9ada7;
   --last-color: #f2e9e4;
   --grey: #e8e8e8;
+  --grey-darker: #575757;
   font-family: 'Montserrat', sans-serif;
 }
