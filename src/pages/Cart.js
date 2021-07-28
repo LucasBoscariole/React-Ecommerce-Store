@@ -1,7 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Cart = () => {
-  return <h1>Cart</h1>;
+const Card = () => {
+  return <h1>Card</h1>;
 };
 
-export default Cart;
+export default Card;

@@ -3,7 +3,7 @@ import { ProductsData } from '../../data/ProductsData';
 import styled from 'styled-components';
 import Stars from '../Home/Stars';
 import { formatPrice } from '../../data/FeaturedProducts';
-import { Link } from 'react-router-dom';
+import AddToCard from './AddToCard';
 
 const Info = ({ id }) => {
   return (
@@ -14,13 +14,6 @@ const Info = ({ id }) => {
             <Wrapper key={item.id} size={item.size}>
               <h2>{item.title}</h2>
               <p>{item.desc}</p>
-              <div className='flex'>
-                {item.size
-                  ? item.size.map((item) => {
-                      return <div className='size'>{item.number}</div>;
-                    })
-                  : null}
-              </div>
               <p>
                 <span>Brand :</span> {item.brand}
               </p>
@@ -29,9 +22,7 @@ const Info = ({ id }) => {
               </p>
               <Stars stars={item.stars} reviews={item.reviews} trueReviews />
               <h1>{formatPrice(item.price)}</h1>
-              <Link className='link' to='/shop'>
-                add to card
-              </Link>
+              <AddToCard id={item.id} />
             </Wrapper>
           );
         } else {
@@ -47,7 +38,6 @@ export default Info;
 const Wrapper = styled.article`
   width: 100%;
   height: 100%;
-
   p {
     letter-spacing: 1px;
     text-transform: capitalize;
@@ -56,22 +46,6 @@ const Wrapper = styled.article`
     span {
       color: #000;
     }
-  }
-  .flex {
-    display: flex;
-    width: 30%;
-    justify-content: space-between;
-  }
-  .size {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--grey-darker);
-    color: #fff;
-    display: ${(size) => (true ? 'flex' : 'none')};
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
   }
   h2 {
     margin: 1rem 0;
@@ -92,6 +66,14 @@ const Wrapper = styled.article`
     text-decoration: none;
     &:hover {
       background: var(--second-color);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    p {
+      margin: 0.5rem 0;
+    }
+    h1 {
+      margin: 0.5rem 0 2rem;
     }
   }
 `;

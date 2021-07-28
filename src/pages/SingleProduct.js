@@ -6,15 +6,15 @@ import { ProductsData } from '../data/ProductsData';
 import Info from '../components/SingleProduct.js/Info';
 import CarouselSlider from '../components/SingleProduct.js/Carousel';
 
-const SinlgeProduct = () => {
+const SingleProduct = () => {
   const { id } = useParams();
   return (
     <>
       {ProductsData.map((item) => {
         if (item.id === id) {
           return (
-            <>
-              <Wrapper key={item.id}>
+            <section key={item.id}>
+              <Wrapper>
                 <Container>
                   <Gallery images={item.images} />
                 </Container>
@@ -23,7 +23,7 @@ const SinlgeProduct = () => {
                 </Container>
               </Wrapper>
               <CarouselSlider category={item.category} />
-            </>
+            </section>
           );
         }
       })}
@@ -31,15 +31,16 @@ const SinlgeProduct = () => {
   );
 };
 
-export default SinlgeProduct;
+export default SingleProduct;
 
-const Wrapper = styled.section`
+const Wrapper = styled.article`
   width: 90%;
   min-height: 75vh;
   margin: 70px auto 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 const Container = styled.div`

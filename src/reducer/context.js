@@ -59,6 +59,7 @@ const FilterProvider = ({ children }) => {
     setIsOpen(!isOpen);
   };
   // Toggle Menu
+
   return (
     <FilterContext.Provider
       value={{

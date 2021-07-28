@@ -54,7 +54,7 @@ function App() {
           <Contact />
           <Footer />
         </Route>
-        <Route exact path='/card'>
+        <Route exact path='/cart'>
           <Navbar />
           <Dropdown />
           <Cart />

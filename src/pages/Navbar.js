@@ -38,7 +38,7 @@ const Navbar = () => {
         </NavMenu>
         <ContainerCart>
           <SignIn to='/signin'>sign in</SignIn>
-          <Bag>
+          <Bag to='/cart'>
             <IoBagHandle />
           </Bag>
         </ContainerCart>
