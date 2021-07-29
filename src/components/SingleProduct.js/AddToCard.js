@@ -30,25 +30,28 @@ const AddToCard = ({ id }) => {
   return (
     <Wrapper>
       <div className='flex'>
-        {size.map((item, index) => {
-          return (
-            <button
-              key={index}
-              className={`${mainSize === size[index] ? 'size active' : 'size'}`}
-              onClick={() => setMainSize(size[index])}
-            >
-              {item.number}
-            </button>
-          );
-        })}
+        {size &&
+          size.map((item, index) => {
+            return (
+              <button
+                key={index}
+                className={`${
+                  mainSize === size[index] ? 'size active' : 'size'
+                }`}
+                onClick={() => setMainSize(size[index])}
+              >
+                {item.number}
+              </button>
+            );
+          })}
       </div>
       <div className='btn-container'>
         <AmountButtons
           increase={increase}
           decrease={decrease}
           amount={amount}
+          className='amount'
         />
-
         <Link
           to='/cart'
           className='btn'
@@ -92,11 +95,20 @@ const Wrapper = styled.div`
     background: #000;
   }
   .btn-container {
-    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .amount {
+    margin-bottom: 1rem;
   }
   .btn {
-    margin-top: 1rem;
-    width: 140px;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    background: var(--main-color);
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transform: translateY(50%);
   }
   @media screen and (max-width: 768px) {
     .flex {

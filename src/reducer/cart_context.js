@@ -23,37 +23,54 @@ export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   // add to cart
   const addToCart = (id, mainSize, amount, product) => {
-    console.log('hi');
     dispatch({
       type: 'ADD_TO_CART',
       payload: { id, mainSize, amount, product },
     });
   };
-  // // remove item
-  // const removeItem = (id) => {
-  // dispatch({ type: 'REMOVE_CART_ITEM', payload: id });
-  // };
-  // // toggle amount
-  // const toggleAmount = (id, value) => {
-  //   dispatch({
-  //     type: TOGGLE_CART_ITEM_AMOUNT,
-  //     payload: {
-  //       id,
-  //       value,
-  //     },
-  //   });
-  // };
-  // // clear cart
-  // const clearCart = () => {
-  //   dispatch({ type: CLEAR_CART });
-  // };
-  // useEffect(() => {
-  //   localStorage.setItem('cart', JSON.stringify(state.cart));
-  //   dispatch({ type: COUNT_CART_TOTALS });
-  // }, [state.cart]);
-  // , removeItem, toggleAmount, clearCart
+  // add to cart
+  //
+  //
+  //
+  // remove item
+  const removeItem = (id) => {
+    dispatch({ type: 'REMOVE_CART_ITEM', payload: id });
+  };
+  // remove item
+  //
+  //
+  //
+  // toggle amount
+  const toggleAmount = (id, value) => {
+    dispatch({
+      type: 'TOGGLE_CART_ITEM_AMOUNT',
+      payload: {
+        id,
+        value,
+      },
+    });
+  };
+  //
+  //
+  //
+  // clear cart
+  const clearCart = () => {
+    dispatch({ type: 'CLEAR_CART' });
+  };
+  //
+  //
+  //
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(state.cart));
+    dispatch({ type: 'COUNT_CART_TOTALS' });
+  }, [state.cart]);
+  //
+  //
+  //
   return (
-    <CartContext.Provider value={{ ...state, addToCart }}>
+    <CartContext.Provider
+      value={{ ...state, addToCart, removeItem, clearCart, toggleAmount }}
+    >
       {children}
     </CartContext.Provider>
   );

@@ -53,7 +53,7 @@ const CarouselSlider = ({ category }) => {
           .map((item) => {
             return (
               <SliderContainerContent key={item.id}>
-                <Link key={item.id} to={`/shop/:${item.id}`}>
+                <Link key={item.id} to={`/shop/${item.id}`}>
                   <img src={item.img} alt={`${item.title}`} />
                   <h3>{item.title}</h3>
                   <h3>{formatPrice(item.price)}</h3>

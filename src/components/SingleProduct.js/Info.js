@@ -53,7 +53,7 @@ const Wrapper = styled.article`
     color: #000;
   }
   h1 {
-    margin: 1rem 0 2rem;
+    margin: 1rem 0 1rem;
   }
   .link {
     padding: 1rem 2rem;
@@ -73,7 +73,7 @@ const Wrapper = styled.article`
       margin: 0.5rem 0;
     }
     h1 {
-      margin: 0.5rem 0 2rem;
+      margin: 0.5rem 0 1rem;
     }
   }
 `;
