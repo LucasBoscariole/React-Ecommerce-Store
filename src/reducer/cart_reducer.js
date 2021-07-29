@@ -2,7 +2,9 @@ const cart_reducer = (state, action) => {
   if (action.type === 'ADD_TO_CART') {
     const { id, amount, product } = action.payload;
     let { mainSize } = action.payload;
-    mainSize = mainSize.number;
+    if (mainSize) {
+      mainSize = mainSize.number;
+    }
     const test = id + mainSize;
     // See if the item is already in the cart
     const tempItem = state.cart.find((i) => i.id === test);

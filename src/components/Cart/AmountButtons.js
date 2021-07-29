@@ -37,6 +37,14 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
   }
+  @media screen and (max-width: 768px) {
+    width: 100px;
+    height: 4rem;
+    margin-bottom: 0.75rem;
+    h2 {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export default AmountButtons;

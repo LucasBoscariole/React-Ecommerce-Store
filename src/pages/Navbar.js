@@ -5,6 +5,7 @@ import { linksData } from '../data/NavData';
 import { FaBars } from 'react-icons/fa';
 import { IoBagHandle } from 'react-icons/io5';
 import { useFilterContext } from '../reducer/context';
+import { useCartContext } from '../reducer/cart_context';
 
 const Navbar = () => {
   //NavBar Background
@@ -23,6 +24,8 @@ const Navbar = () => {
   }, []);
   //NavBar Background
   const { toggle } = useFilterContext();
+  const { total_items } = useCartContext();
+
   return (
     <Wrapper fixedNav={navBarBackground}>
       <NavWrapper>
@@ -39,6 +42,7 @@ const Navbar = () => {
         <ContainerCart>
           <SignIn to='/signin'>sign in</SignIn>
           <Bag to='/cart'>
+            <div className='total'>{total_items}</div>
             <IoBagHandle />
           </Bag>
         </ContainerCart>
@@ -59,7 +63,7 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: ${({ fixedNav }) => (fixedNav ? '#fff' : 'var(--grey)')};
   z-index: 100;
   transition: 0.5s;
   box-shadow: ${({ fixedNav }) =>
@@ -155,4 +159,19 @@ const Bag = styled(Link)`
   color: #000;
   font-size: 2rem;
   text-decoration: none;
+  position: relative;
+  .total {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--main-color);
+    color: #fff;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;

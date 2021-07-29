@@ -15,5 +15,5 @@ export default Card;
 const Wrapper = styled.section`
   display: block;
   width: 90%;
-  margin: 70px auto 0;
+  margin: calc(70px + 1.75rem) auto 0;
 `;
