@@ -41,9 +41,6 @@ const Wrapper = styled.div`
     width: 100px;
     height: 4rem;
     margin-bottom: 0.75rem;
-    h2 {
-      margin-bottom: 0;
-    }
   }
 `;
 

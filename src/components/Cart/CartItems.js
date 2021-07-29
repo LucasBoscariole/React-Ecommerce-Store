@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useCartContext } from '../../reducer/cart_context';
 import CartProduct from './CartProduct';
+import Links from './Links';
 import Totals from './Totals';
 
 const CartItems = () => {
@@ -24,6 +25,7 @@ const CartItems = () => {
         })}
       </Container>
       <Totals />
+      <Links />
     </>
   );
 };

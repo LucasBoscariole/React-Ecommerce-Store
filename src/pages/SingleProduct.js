@@ -10,6 +10,7 @@ const SingleProduct = () => {
   const { id } = useParams();
   return (
     <>
+      {/* eslint-disable-next-line */}
       {ProductsData.map((item) => {
         if (item.id === id) {
           return (
@@ -36,7 +37,7 @@ export default SingleProduct;
 const Wrapper = styled.article`
   width: 90%;
   min-height: 75vh;
-  margin: 70px auto 0;
+  margin: calc(70px + 1.5rem) auto 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

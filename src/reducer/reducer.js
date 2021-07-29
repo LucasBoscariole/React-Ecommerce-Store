@@ -47,7 +47,7 @@ const filter_reducer = (state, action) => {
   }
 
   if (action.type === 'FILTER_PRODUCTS') {
-    const { all_products, filtered_products } = state;
+    const { all_products } = state;
     const { search, category, price, brand } = state.filter;
     let tempProducts = [...all_products];
     if (search) {

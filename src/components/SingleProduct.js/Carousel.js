@@ -103,8 +103,23 @@ const SliderContainerContent = styled.div`
   }
   @media (min-width: 464px) and (max-width: 1023px) {
     width: 25vw;
+    h3 {
+      font-size: 1.1rem;
+      margin: 0.3rem 0 0.3rem 0.75rem;
+
+      &:last-child {
+        font-size: 1.05rem;
+      }
+    }
   }
   @media screen and (max-width: 463px) {
     width: 40vw;
+    h3 {
+      font-size: 1rem;
+      margin: 0.3rem 0 0.3rem 0.65rem;
+      &:last-child {
+        font-size: 0.9rem;
+      }
+    }
   }
 `;

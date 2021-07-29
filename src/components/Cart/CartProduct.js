@@ -136,6 +136,7 @@ const ContainerAmount = styled.div`
     flex-direction: column;
     h2 {
       font-size: 1.4rem;
+      margin-bottom: 0;
     }
   }
 `;
