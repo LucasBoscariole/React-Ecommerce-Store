@@ -57,4 +57,5 @@ const LinkTo = styled(Link)`
 const Container = styled.div`
   display: block;
   width: 100%;
+  min-height: 35vh;
 `;

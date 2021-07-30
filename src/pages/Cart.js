@@ -16,4 +16,5 @@ const Wrapper = styled.section`
   display: block;
   width: 90%;
   margin: calc(70px + 1.75rem) auto 0;
+  min-height: 75vh;
 `;

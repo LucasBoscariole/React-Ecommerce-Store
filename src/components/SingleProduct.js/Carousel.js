@@ -48,6 +48,7 @@ const CarouselSlider = ({ category }) => {
         showDots={false}
         slidesToSlide={1}
         swipeable
+        removeArrowOnDeviceType={['tablet', 'mobile']}
       >
         {ProductsData.filter((item) => item.category === category)
           .map((item) => {
@@ -72,6 +73,7 @@ export default CarouselSlider;
 const Wrapper = styled.article`
   width: 90vw;
   margin: 1rem auto 2rem auto;
+  z-index: 1;
   @media screen and (max-width: 768px) {
     width: 90vw;
   }
