@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import image from '../images/signin.jpg';
+import { useFilterContext } from '../reducer/context';
 
 const SignIn = () => {
+  const { signIn } = useFilterContext();
   return (
     <Wrapper>
       <img src={image} alt='' />
@@ -25,11 +28,15 @@ const SignIn = () => {
             />
             <label htmlFor='remember'>Remember Me</label>
           </div>
-          <button type='submit'>Log In</button>
+          <Link to='/'>Log In</Link>
           <div className='or'>Or</div>
-          <button type='submit' className='demo'>
+          <Link to='/' className='sign'>
+            Sign In
+          </Link>
+          <hr />
+          <Link to='/' className='demo' onClick={() => signIn()}>
             Demo
-          </button>
+          </Link>
         </Container>
       </SignInContainer>
     </Wrapper>
@@ -40,23 +47,18 @@ export default SignIn;
 
 const Wrapper = styled.section`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 70px);
   display: flex;
+  align-items: center;
+  justify-content: center;
   img {
-    width: 60%;
-    height: 100vh;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    z-index: -1;
     object-fit: cover;
-  }
-  @media screen and (max-width: 768px) {
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      z-index: -1;
-      object-fit: cover;
-    }
   }
 `;
 
@@ -65,15 +67,18 @@ const SignInContainer = styled.article`
   align-items: center;
   justify-content: center;
   width: 40%;
+  min-height: 60vh;
   background: var(--grey);
+  border-radius: 10px;
+  margin-top: 100px;
   @media screen and (max-width: 768px) {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    width: 90%;
+    margin: 100px auto 0;
   }
 `;
 
 const Container = styled.div`
-  display: block;
+  display: grid;
   width: 55%;
   h2 {
     margin-bottom: 1rem;
@@ -94,6 +99,7 @@ const Container = styled.div`
   }
   .remember {
     display: flex;
+    margin-bottom: 1rem;
     .input {
       width: 15px;
       height: 15px;
@@ -104,16 +110,21 @@ const Container = styled.div`
       margin-left: 0.5rem;
     }
   }
-  button {
-    width: 100%;
+  a {
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--main-color);
     color: #fff;
     border-radius: 5px;
     border: none;
     outline: none;
-    margin-top: 1rem;
     letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
   }
   .or {
     width: 100%;
@@ -122,16 +133,14 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
   }
+  .sign {
+    margin-bottom: 1rem;
+  }
   .demo {
-    margin: 0;
+    margin: 1rem 0;
     background: var(--second-color);
   }
   @media screen and (max-width: 768px) {
     width: 70%;
-    h2,
-    label,
-    .or {
-      color: #fff;
-    }
   }
 `;

@@ -6,7 +6,7 @@ import { FaTimes } from 'react-icons/fa';
 import { useFilterContext } from '../reducer/context';
 
 const Dropdown = () => {
-  const { toggle, isOpen } = useFilterContext();
+  const { toggle, isOpen, signin, logOut } = useFilterContext();
   return (
     <DropdownContainer isOpen={isOpen} onClick={toggle}>
       <CloseBtn onClick={toggle}>
@@ -21,7 +21,9 @@ const Dropdown = () => {
               </DropdownLink>
             );
           })}
-          <SignIn to='/signin'>sign in</SignIn>
+          <SignIn to='/signin' onClick={!signin ? () => logOut() : null}>
+            {signin ? 'sign in' : 'log out'}
+          </SignIn>
         </DropdownMenu>
       </div>
     </DropdownContainer>
@@ -78,7 +80,9 @@ const DropdownLink = styled(Link)`
   }
 `;
 const SignIn = styled(Link)`
-  color: #fff;
+  color: ${({ sign }) => (sign ? '#fff' : '#000')};
+  border: 1px solid ${({ sign }) => (sign ? '#fff' : '#000')};
+  background: ${({ sign }) => (sign ? '#000' : '#fff')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,6 +93,5 @@ const SignIn = styled(Link)`
   text-transform: capitalize;
   transition: 0.5s;
   margin: 3rem auto 0;
-  background: #000;
   letter-spacing: 1px;
 `;

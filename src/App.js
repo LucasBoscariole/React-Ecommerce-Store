@@ -62,6 +62,8 @@ function App() {
             <Footer />
           </Route>
           <Route exact path='/signin'>
+            <Navbar />
+            <Dropdown />
             <SignIn />
           </Route>
           <Route path='*'>

@@ -7,14 +7,20 @@ const filter_reducer = (state, action) => {
       filter: { ...state.filter },
     };
   }
-
+  //
+  //
+  //
   if (action.type === 'UPDATE_SORT') {
     return { ...state, sort: action.payload.value };
   }
-
+  //
+  //
+  //
   if (action.type === 'SORT_PRODUCTS') {
     const { sort, filtered_products } = state;
     let tempProducts = [];
+    //
+    //
     //
     if (sort === 'Popularity') {
       tempProducts = filtered_products.sort((a, b) => {
@@ -40,12 +46,16 @@ const filter_reducer = (state, action) => {
     //
     return { ...state, filtered_products: tempProducts };
   }
-
+  //
+  //
+  //
   if (action.type === 'UPDATE_FILTERS') {
     const { name, value } = action.payload;
     return { ...state, filter: { ...state.filter, [name]: value } };
   }
-
+  //
+  //
+  //
   if (action.type === 'FILTER_PRODUCTS') {
     const { all_products } = state;
     const { search, category, price, brand } = state.filter;
@@ -83,6 +93,8 @@ const filter_reducer = (state, action) => {
       }
     }
     //
+    //
+    //
     if (price === 'All') {
       tempProducts = tempProducts.filter((product) => product.price >= 0);
     } else {
@@ -107,6 +119,8 @@ const filter_reducer = (state, action) => {
         );
       }
     }
+    //
+    //
     //
     if (brand === 'All') {
       tempProducts = tempProducts.filter((product) => product.brand !== brand);
@@ -133,6 +147,18 @@ const filter_reducer = (state, action) => {
       }
     }
     return { ...state, filtered_products: tempProducts };
+  }
+  //
+  //
+  //
+  if (action.type === 'SIGN_IN') {
+    return { ...state, signin: false };
+  }
+  //
+  //
+  //
+  if (action.type === 'LOG_OUT') {
+    return { ...state, signin: true };
   }
   throw new Error(`No Matching "${action.type}" - action type`);
 };

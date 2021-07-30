@@ -34,7 +34,7 @@ export default CartItems;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: calc(90vh - 70px);
+  height: calc(80vh - 70px);
   display: flex;
   align-items: center;
   justify-content: center;

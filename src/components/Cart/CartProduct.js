@@ -124,7 +124,7 @@ const ContainerAmount = styled.div`
   justify-content: space-around;
   .trash {
     font-size: 1.5rem;
-    color: red;
+    color: #ff5036;
     cursor: pointer;
   }
   h2 {

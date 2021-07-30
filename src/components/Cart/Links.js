@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useFilterContext } from '../../reducer/context';
 
 const Links = () => {
+  const { signin } = useFilterContext();
+
   return (
     <Wrapper>
       <LinkTo to='/shop'>keep shopping</LinkTo>
-      <LinkTo to='/signin' background='true'>
+      <LinkTo to={!signin ? '/' : '/signin'} background='true'>
         checkout
       </LinkTo>
     </Wrapper>
