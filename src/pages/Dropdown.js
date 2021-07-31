@@ -22,7 +22,7 @@ const Dropdown = () => {
             );
           })}
           <SignIn to='/signin' onClick={!signin ? () => logOut() : null}>
-            {signin ? 'sign in' : 'log out'}
+            {!signin ? 'sign in' : 'log out'}
           </SignIn>
         </DropdownMenu>
       </div>

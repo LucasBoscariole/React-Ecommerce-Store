@@ -91,11 +91,10 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Pink Coat',
     desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero odio minima numquam similique quibusdam. Ut fugit suscipit quia magnam quibusdam sapiente praesentium debitis voluptates officia veritatis explicabo magni quae, doloribus deserunt nesciunt, provident at.',
     img: womanimg3,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
-
     stars: 3.7,
     price: 162000,
     newness: 4,
@@ -113,7 +112,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Brown T-Shirt',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ipsa fugiat excepturi, a voluptatibus alias rerum voluptatum consequuntur accusantium inventore laborum necessitatibus natus magni, totam quidem id itaque doloremque omnis obcaecati odio expedita rem earum.',
     img: womanimg4,
     size: [{ number: 'S' }, { number: 'M' }],
@@ -135,7 +134,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Red Short',
     desc: '  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur harum eaque magnam dolores sapiente praesentium dolorum aspernatur vel sequi. Tempora libero nihil velit nam repellendus perferendis. Rerum, labore beatae voluptate deleniti quaerat hic quam fuga eveniet.',
     img: womanimg5,
     size: [{ number: 'S' }, { number: 'L' }, { number: 'EL' }],
@@ -157,7 +156,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Coat',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ea, dolore, cumque nulla at sit facilis suscipit inventore necessitatibus neque doloribus ab, numquam ullam aliquid eaque alias architecto molestias optio!',
     img: womanimg6,
     size: [{ number: 'M' }, { number: 'L' }],
@@ -179,7 +178,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Yellow Skirt',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias provident libero inventore, optio ratione tenetur maiores similique sequi reiciendis corrupti a ex eum asperiores iusto temporibus beatae voluptatum assumenda soluta dolores quis illo aut odio! Sapiente aut esse assumenda voluptatum.',
     img: womanimg7,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -201,7 +200,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Blue Flower Dress',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolorem id minima odit! Quis possimus nostrum eum. Voluptas illum excepturi ipsa quidem ullam delectus facilis accusamus ratione exercitationem doloribus, eligendi libero corporis! Aperiam totam ratione dolorem autem.',
     img: womanimg8,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -223,7 +222,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Leather Skirt',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet obcaecati ducimus iste, neque perferendis tempora ut molestiae. Animi, velit atque. Hic, reiciendis voluptatum, mollitia, odio eos totam illo minus ea sunt consectetur odit impedit temporibus explicabo? Necessitatibus error nihil rerum laborum vel?',
     img: womanimg9,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -245,7 +244,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Blue Dress',
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem mollitia id natus esse, excepturi ratione earum! Veritatis voluptatum ipsam, necessitatibus aperiam exercitationem quasi nostrum. Temporibus recusandae deleniti vel quas tempora quidem veniam',
     img: womanimg10,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -267,7 +266,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Green Pants',
     desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere qui laboriosam adipisci fugiat labore! Labore recusandae quis tempore perferendis deleniti quidem, maxime vero tempora pariatur debitis ratione distinctio nemo explicabo fugiat. Nihil autem sequi beatae!',
     img: womanimg11,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -289,7 +288,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Beige Pant',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta animi aliquam autem quibusdam in repellendus nam dolorum ipsa quisquam fuga, hic, dolor voluptates. Inventore perspiciatis ipsa dignissimos natus veniam eligendi hic soluta cupiditate odio nihil consequatur corporis architecto, nemo tenetur.',
     img: womanimg12,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -311,7 +310,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Summer Dress',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ullam reprehenderit ab voluptate facilis libero repellat, adipisci optio? Pariatur repellendus tempora temporibus, maxime officia sint nam! Aliquam in velit minima quo impedit excepturi minus ab magnam et perferendis.',
     img: womanimg13,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -333,7 +332,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'White Dress',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ullam reprehenderit ab voluptate facilis libero repellat, adipisci optio? Pariatur repellendus tempora temporibus, maxime officia sint nam! Aliquam in velit minima quo impedit excepturi minus ab magnam et perferendis.',
     img: womanimg14,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -355,7 +354,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Woman',
+    title: 'Hope it Falls',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ullam reprehenderit ab voluptate facilis libero repellat, adipisci optio? Pariatur repellendus tempora temporibus, maxime officia sint nam! Aliquam in velit minima quo impedit excepturi minus ab magnam et perferendis.',
     img: womanimg15,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -398,7 +397,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Sunglass',
+    title: 'Motorcycle Sunglass',
     desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero odio minima numquam similique quibusdam. Ut fugit suscipit quia magnam quibusdam sapiente praesentium debitis voluptates officia veritatis explicabo magni quae, doloribus deserunt nesciunt, provident at.',
     img: sunimg2,
     size: '',
@@ -419,7 +418,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Sunglass',
+    title: 'Boy Sunglass',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ipsa fugiat excepturi, a voluptatibus alias rerum voluptatum consequuntur accusantium inventore laborum necessitatibus natus magni, totam quidem id itaque doloremque omnis obcaecati odio expedita rem earum.',
     img: sunimg3,
     size: '',
@@ -440,7 +439,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Sunglass',
+    title: 'NFD Sunglass',
     desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur harum eaque magnam dolores sapiente praesentium dolorum aspernatur vel sequi. Tempora libero nihil velit nam repellendus perferendis. Rerum, labore beatae voluptate deleniti quaerat hic quam fuga eveniet.',
     img: sunimg4,
     size: '',
@@ -461,7 +460,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Sunglass',
+    title: 'Black Sunglass',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ea, dolore, cumque nulla at sit facilis suscipit inventore necessitatibus neque doloribus ab, numquam ullam aliquid eaque alias architecto molestias optio!',
     img: sunimg5,
     size: '',
@@ -482,7 +481,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Sunglass',
+    title: 'Leopard Sunglass',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias provident libero inventore, optio ratione tenetur maiores similique sequi reiciendis corrupti a ex eum asperiores iusto temporibus beatae voluptatum assumenda soluta dolores quis illo aut odio! Sapiente aut esse assumenda voluptatum.',
     img: sunimg6,
     size: '',
@@ -503,7 +502,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Sunglass',
+    title: 'Night Sunglass',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolorem id minima odit! Quis possimus nostrum eum. Voluptas illum excepturi ipsa quidem ullam delectus facilis accusamus ratione exercitationem doloribus, eligendi libero corporis! Aperiam totam ratione dolorem autem.',
     img: sunimg7,
     size: '',
@@ -524,7 +523,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Mens Suit',
+    title: 'Beige Suit',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, a eligendi? Adipisci iusto voluptate, sapiente officiis magnam laboriosam et tempore quae, unde mollitia expedita soluta consequuntur sequi. Similique voluptatum nulla ipsam id.',
     img: menimg1,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -546,7 +545,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Jeans',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, a eligendi? Adipisci iusto voluptate, sapiente officiis magnam laboriosam et tempore quae, unde mollitia expedita soluta consequuntur sequi. Similique voluptatum nulla ipsam id.',
     img: menimg2,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -568,7 +567,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Suit',
     desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero odio minima numquam similique quibusdam. Ut fugit suscipit quia magnam quibusdam sapiente praesentium debitis voluptates officia veritatis explicabo magni quae, doloribus deserunt nesciunt, provident at.',
     img: menimg3,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -590,7 +589,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Brown Pants',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ipsa fugiat excepturi, a voluptatibus alias rerum voluptatum consequuntur accusantium inventore laborum necessitatibus natus magni, totam quidem id itaque doloremque omnis obcaecati odio expedita rem earum.',
     img: menimg4,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -612,11 +611,10 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
-    desc: '  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur harum eaque magnam dolores sapiente praesentium dolorum aspernatur vel sequi. Tempora libero nihil velit nam repellendus perferendis. Rerum, labore beatae voluptate deleniti quaerat hic quam fuga eveniet.',
+    title: 'Beige Sweater',
+    desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur harum eaque magnam dolores sapiente praesentium dolorum aspernatur vel sequi. Tempora libero nihil velit nam repellendus perferendis. Rerum, labore beatae voluptate deleniti quaerat hic quam fuga eveniet.',
     img: menimg5,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
-
     stars: 2.9,
     price: 34000,
     newness: 7,
@@ -634,7 +632,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Blue Jeans',
     desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ea, dolore, cumque nulla at sit facilis suscipit inventore necessitatibus neque doloribus ab, numquam ullam aliquid eaque alias architecto molestias optio!',
     img: menimg6,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -656,7 +654,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Leather Coat',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias provident libero inventore, optio ratione tenetur maiores similique sequi reiciendis corrupti a ex eum asperiores iusto temporibus beatae voluptatum assumenda soluta dolores quis illo aut odio! Sapiente aut esse assumenda voluptatum.',
     img: menimg7,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -678,7 +676,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'White Shirt',
     desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolorem id minima odit! Quis possimus nostrum eum. Voluptas illum excepturi ipsa quidem ullam delectus facilis accusamus ratione exercitationem doloribus, eligendi libero corporis! Aperiam totam ratione dolorem autem.',
     img: menimg8,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -700,7 +698,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Black Suit',
     desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet obcaecati ducimus iste, neque perferendis tempora ut molestiae. Animi, velit atque. Hic, reiciendis voluptatum, mollitia, odio eos totam illo minus ea sunt consectetur odit impedit temporibus explicabo? Necessitatibus error nihil rerum laborum vel?',
     img: menimg9,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -722,7 +720,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Jeans Sweater',
     desc: '  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem mollitia id natus esse, excepturi ratione earum! Veritatis voluptatum ipsam, necessitatibus aperiam exercitationem quasi nostrum. Temporibus recusandae deleniti vel quas tempora quidem veniam',
     img: menimg10,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -744,7 +742,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Leather Sweater',
     desc: '  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere qui laboriosam adipisci fugiat labore! Labore recusandae quis tempore perferendis deleniti quidem, maxime vero tempora pariatur debitis ratione distinctio nemo explicabo fugiat. Nihil autem sequi beatae!',
     img: menimg11,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -766,7 +764,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Blue Jeans',
     desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta animi aliquam autem quibusdam in repellendus nam dolorum ipsa quisquam fuga, hic, dolor voluptates. Inventore perspiciatis ipsa dignissimos natus veniam eligendi hic soluta cupiditate odio nihil consequatur corporis architecto, nemo tenetur.',
     img: menimg12,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -788,7 +786,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Men',
+    title: 'Brown Coat',
     desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ullam reprehenderit ab voluptate facilis libero repellat, adipisci optio? Pariatur repellendus tempora temporibus, maxime officia sint nam! Aliquam in velit minima quo impedit excepturi minus ab magnam et perferendis.',
     img: menimg13,
     size: [{ number: 'S' }, { number: 'M' }, { number: 'L' }, { number: 'EL' }],
@@ -809,7 +807,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Watches',
+    title: 'Blue Watch',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ea, dolore, cumque nulla at sit facilis suscipit inventore necessitatibus neque doloribus ab, numquam ullam aliquid eaque alias architecto molestias optio!',
     img: watchesimg1,
     size: '',
@@ -830,7 +828,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Watches',
+    title: 'Leather Watch',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias provident libero inventore, optio ratione tenetur maiores similique sequi reiciendis corrupti a ex eum asperiores iusto temporibus beatae voluptatum assumenda soluta dolores quis illo aut odio! Sapiente aut esse assumenda voluptatum.',
     img: watchesimg2,
     size: '',
@@ -851,7 +849,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Watches',
+    title: 'Beach Watch',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolorem id minima odit! Quis possimus nostrum eum. Voluptas illum excepturi ipsa quidem ullam delectus facilis accusamus ratione exercitationem doloribus, eligendi libero corporis! Aperiam totam ratione dolorem autem.',
     img: watchesimg3,
     size: '',
@@ -872,7 +870,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Watches',
+    title: 'KD Watch',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet obcaecati ducimus iste, neque perferendis tempora ut molestiae. Animi, velit atque. Hic, reiciendis voluptatum, mollitia, odio eos totam illo minus ea sunt consectetur odit impedit temporibus explicabo? Necessitatibus error nihil rerum laborum vel?',
     img: watchesimg4,
     size: '',
@@ -893,7 +891,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Watches',
+    title: 'OKC Watch',
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem mollitia id natus esse, excepturi ratione earum! Veritatis voluptatum ipsam, necessitatibus aperiam exercitationem quasi nostrum. Temporibus recusandae deleniti vel quas tempora quidem veniam',
     img: watchesimg5,
     size: '',
@@ -914,7 +912,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Watches',
+    title: 'Gold Watch',
     desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere qui laboriosam adipisci fugiat labore! Labore recusandae quis tempore perferendis deleniti quidem, maxime vero tempora pariatur debitis ratione distinctio nemo explicabo fugiat. Nihil autem sequi beatae!',
     img: watchesimg6,
     size: '',
@@ -935,7 +933,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Watches',
+    title: 'Snow Watch',
     desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta animi aliquam autem quibusdam in repellendus nam dolorum ipsa quisquam fuga, hic, dolor voluptates. Inventore perspiciatis ipsa dignissimos natus veniam eligendi hic soluta cupiditate odio nihil consequatur corporis architecto, nemo tenetur.',
     img: watchesimg7,
     size: '',
@@ -956,7 +954,7 @@ export const ProductsData = [
     ],
   },
   {
-    title: 'Watches',
+    title: 'Brown Watch',
     desc: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ullam reprehenderit ab voluptate facilis libero repellat, adipisci optio? Pariatur repellendus tempora temporibus, maxime officia sint nam! Aliquam in velit minima quo impedit excepturi minus ab magnam et perferendis.',
     img: watchesimg8,
     size: '',

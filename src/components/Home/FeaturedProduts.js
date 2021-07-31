@@ -12,7 +12,7 @@ const FeaturedProduts = () => {
       <Container>
         {FeaturedProdutsData.map((item, index) => {
           return (
-            <FeaturedContainer key={index} to='/shop'>
+            <FeaturedContainer key={index} to={`/shop/${item.id}`}>
               <img src={item.img} alt={`${item.title}`} />
               <FlexWrapper>
                 <h2>{item.title}</h2>

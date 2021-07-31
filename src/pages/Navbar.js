@@ -45,7 +45,7 @@ const Navbar = () => {
             to='/signin'
             onClick={!signin ? () => logOut() : null}
           >
-            {signin ? 'sign in' : 'log out'}
+            {!signin ? 'sign in' : 'log out'}
           </SignIn>
           <Bag to='/cart'>
             <div className='total'>{total_items}</div>
