@@ -62,15 +62,6 @@ const FilterProvider = ({ children }) => {
   //
   //
   //
-  const signIn = () => {
-    dispatch({ type: 'SIGN_IN' });
-  };
-  //
-  //
-  //
-  const logOut = () => {
-    dispatch({ type: 'LOG_OUT' });
-  };
   // Toggle Menu
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
@@ -86,8 +77,6 @@ const FilterProvider = ({ children }) => {
         isOpen,
         updateSort,
         updateFilters,
-        signIn,
-        logOut,
       }}
     >
       {children}

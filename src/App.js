@@ -11,8 +11,8 @@ import Contact from './pages/Contact';
 import Error from './pages/Error';
 import Footer from './pages/Footer';
 import Cart from './pages/Cart';
-import SignIn from './pages/SignIn';
 import ScrollToTop from './components/ScrollToTop';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -61,10 +61,10 @@ function App() {
             <Cart />
             <Footer />
           </Route>
-          <Route exact path='/signin'>
+          <Route exact path='/checkout'>
             <Navbar />
             <Dropdown />
-            <SignIn />
+            <Checkout />
           </Route>
           <Route path='*'>
             <Navbar />

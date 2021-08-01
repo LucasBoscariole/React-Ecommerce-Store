@@ -23,7 +23,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', changeBackground);
   }, []);
   //NavBar Background
-  const { toggle, signin, logOut } = useFilterContext();
+  const { toggle } = useFilterContext();
   const { total_items } = useCartContext();
 
   return (
@@ -40,13 +40,7 @@ const Navbar = () => {
           })}
         </NavMenu>
         <ContainerCart>
-          <SignIn
-            sign={signin ? 'true' : null}
-            to='/signin'
-            onClick={!signin ? () => logOut() : null}
-          >
-            {!signin ? 'sign in' : 'log out'}
-          </SignIn>
+          <SignIn to='/'>sign in</SignIn>
           <Bag to='/cart'>
             <div className='total'>{total_items}</div>
             <IoBagHandle />
@@ -143,9 +137,9 @@ const ContainerCart = styled.div`
 `;
 
 const SignIn = styled(Link)`
-  color: ${({ sign }) => (sign ? '#fff' : '#000')};
+  color: #fff;
   border: 1px solid #000;
-  background: ${({ sign }) => (sign ? '#000' : 'transparent')};
+  background: transparent;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -154,8 +148,8 @@ const SignIn = styled(Link)`
   text-transform: capitalize;
   transition: 0.5s;
   &:hover {
-    background: ${({ sign }) => (sign ? '#fff' : '#000')};
-    color: ${({ sign }) => (sign ? '#000' : '#fff')};
+    background: #000;
+    color: #fff;
   }
   @media screen and (max-width: 768px) {
     display: none;

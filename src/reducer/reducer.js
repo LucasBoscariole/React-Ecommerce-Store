@@ -151,15 +151,6 @@ const filter_reducer = (state, action) => {
   //
   //
   //
-  if (action.type === 'SIGN_IN') {
-    return { ...state, signin: false };
-  }
-  //
-  //
-  //
-  if (action.type === 'LOG_OUT') {
-    return { ...state, signin: true };
-  }
   throw new Error(`No Matching "${action.type}" - action type`);
 };
 

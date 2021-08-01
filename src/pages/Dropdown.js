@@ -6,7 +6,7 @@ import { FaTimes } from 'react-icons/fa';
 import { useFilterContext } from '../reducer/context';
 
 const Dropdown = () => {
-  const { toggle, isOpen, signin, logOut } = useFilterContext();
+  const { toggle, isOpen } = useFilterContext();
   return (
     <DropdownContainer isOpen={isOpen} onClick={toggle}>
       <CloseBtn onClick={toggle}>
@@ -21,9 +21,7 @@ const Dropdown = () => {
               </DropdownLink>
             );
           })}
-          <SignIn to='/signin' onClick={!signin ? () => logOut() : null}>
-            {!signin ? 'sign in' : 'log out'}
-          </SignIn>
+          <SignIn to='/'>sign in</SignIn>
         </DropdownMenu>
       </div>
     </DropdownContainer>
