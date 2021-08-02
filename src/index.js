@@ -5,13 +5,10 @@ import { CartProvider } from './reducer/cart_context';
 import { FilterProvider } from './reducer/context';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-const DOMAIN = process.env.REACT_APP_DOMAIN;
-const ID = process.env.REACT_APP_CLIENT_ID;
-
 ReactDOM.render(
   <Auth0Provider
-    domain={DOMAIN}
-    clientId={ID}
+    domain='dev-j-wrnkqo.us.auth0.com'
+    clientId='JNsafLin6qBvF2exWLlh0GrXjxLodrSM'
     redirectUri={window.location.origin}
     cacheLocation='localstorage'
   >

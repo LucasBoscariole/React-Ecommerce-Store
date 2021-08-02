@@ -18,7 +18,7 @@ export default Footer;
 
 const Wrapper = styled.footer`
   width: 100%;
-  min-height: 35vh;
+  min-height: 40vh;
   background: var(--main-color);
   display: flex;
   align-items: center;
