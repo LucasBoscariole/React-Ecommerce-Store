@@ -19,7 +19,6 @@ const CheckoutForm = () => {
   const { cart, total_amount, clearCart } = useCartContext();
   const { myUser } = useFilterContext();
   const history = useHistory();
-
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState(null);
   const [processing, setProcessing] = useState('');
@@ -27,6 +26,23 @@ const CheckoutForm = () => {
   const [clientSecret, setClientSecret] = useState('');
   const stripe = useStripe();
   const elements = useElements();
+
+  const createPaymentIntent = async () => {
+    try {
+      const data = await axios.post(
+        '/.netlify/function/create-payment-intent',
+        JSON.stringify({ cart, total_amount })
+      );
+      setClientSecret(data.clientSecret);
+    } catch (error) {
+      // console.log(error.response);
+    }
+  };
+
+  useEffect(() => {
+    createPaymentIntent();
+    // eslint-disable-next-line
+  }, []);
 
   const cardStyled = {
     style: {
@@ -45,24 +61,6 @@ const CheckoutForm = () => {
       },
     },
   };
-
-  const createPaymentIntent = async () => {
-    try {
-      const data = await axios.post(
-        './.netlify/function/create-payment-intent',
-        JSON.stringify({ cart, total_amount })
-      );
-      console.log(data.clientSecret);
-      setClientSecret(data.clientSecret);
-    } catch (error) {
-      // console.log(error.response);
-    }
-  };
-
-  useEffect(() => {
-    createPaymentIntent();
-    // eslint-disable-next-line
-  }, []);
 
   const handleChange = async (event) => {
     setDisabled(event.empty);
