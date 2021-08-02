@@ -17,7 +17,7 @@ const FeaturedProduts = () => {
               <FlexWrapper>
                 <h2>{item.title}</h2>
                 <Flex>
-                  <Stars stars={item.star} reviews={item.reviews} />
+                  <Stars stars={item.stars} reviews={item.reviews} />
                 </Flex>
                 <h3>{formatPrice(item.price)}</h3>
               </FlexWrapper>

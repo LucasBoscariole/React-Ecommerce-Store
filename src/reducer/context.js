@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { ProductsData } from '../data/ProductsData';
 import reducer from './reducer';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const initialState = {
   filtered_products: [],
@@ -68,7 +69,22 @@ const FilterProvider = ({ children }) => {
     setIsOpen(!isOpen);
   };
   // Toggle Menu
+  //
+  //
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
 
+  const [myUser, setMyUser] = useState(null);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      setMyUser(user);
+    } else {
+      setMyUser(false);
+    }
+  }, [isAuthenticated]);
+  //
+  //
+  //
   return (
     <FilterContext.Provider
       value={{
@@ -77,6 +93,9 @@ const FilterProvider = ({ children }) => {
         isOpen,
         updateSort,
         updateFilters,
+        loginWithRedirect,
+        logout,
+        myUser,
       }}
     >
       {children}

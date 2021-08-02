@@ -6,7 +6,8 @@ import { FaTimes } from 'react-icons/fa';
 import { useFilterContext } from '../reducer/context';
 
 const Dropdown = () => {
-  const { toggle, isOpen } = useFilterContext();
+  const { toggle, isOpen, loginWithRedirect, myUser, logout } =
+    useFilterContext();
   return (
     <DropdownContainer isOpen={isOpen} onClick={toggle}>
       <CloseBtn onClick={toggle}>
@@ -21,7 +22,18 @@ const Dropdown = () => {
               </DropdownLink>
             );
           })}
-          <SignIn to='/'>sign in</SignIn>
+          {myUser ? (
+            <SignIn
+              type='button'
+              onClick={() => logout({ returnTo: window.location.origin })}
+            >
+              log out
+            </SignIn>
+          ) : (
+            <SignIn type='button' onClick={loginWithRedirect}>
+              log in
+            </SignIn>
+          )}
         </DropdownMenu>
       </div>
     </DropdownContainer>
@@ -77,10 +89,10 @@ const DropdownLink = styled(Link)`
     color: #121212;
   }
 `;
-const SignIn = styled(Link)`
-  color: ${({ sign }) => (sign ? '#fff' : '#000')};
-  border: 1px solid ${({ sign }) => (sign ? '#fff' : '#000')};
-  background: ${({ sign }) => (sign ? '#000' : '#fff')};
+const SignIn = styled.button`
+  color: #000;
+  border: 1px solid #000;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,7 +100,7 @@ const SignIn = styled(Link)`
   text-decoration: none;
   width: 200px;
   height: 50px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   transition: 0.5s;
   margin: 3rem auto 0;
   letter-spacing: 1px;

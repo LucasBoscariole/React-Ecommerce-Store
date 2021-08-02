@@ -23,7 +23,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', changeBackground);
   }, []);
   //NavBar Background
-  const { toggle } = useFilterContext();
+  const { toggle, loginWithRedirect, myUser, logout } = useFilterContext();
   const { total_items } = useCartContext();
 
   return (
@@ -40,7 +40,19 @@ const Navbar = () => {
           })}
         </NavMenu>
         <ContainerCart>
-          <SignIn to='/'>sign in</SignIn>
+          {myUser ? (
+            <SignIn
+              type='button'
+              onClick={() => logout({ returnTo: window.location.origin })}
+            >
+              log out
+            </SignIn>
+          ) : (
+            <SignIn type='button' onClick={loginWithRedirect}>
+              log in
+            </SignIn>
+          )}
+
           <Bag to='/cart'>
             <div className='total'>{total_items}</div>
             <IoBagHandle />
@@ -136,8 +148,8 @@ const ContainerCart = styled.div`
   }
 `;
 
-const SignIn = styled(Link)`
-  color: #fff;
+const SignIn = styled.button`
+  color: #000;
   border: 1px solid #000;
   background: transparent;
   display: flex;
@@ -145,7 +157,7 @@ const SignIn = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   padding: 0.75rem 2rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   transition: 0.5s;
   &:hover {
     background: #000;
