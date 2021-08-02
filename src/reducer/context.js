@@ -71,17 +71,13 @@ const FilterProvider = ({ children }) => {
   // Toggle Menu
   //
   //
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  const { loginWithRedirect, logout, user } = useAuth0();
 
   const [myUser, setMyUser] = useState(null);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      setMyUser(user);
-    } else {
-      setMyUser(false);
-    }
-  }, [isAuthenticated]);
+    setMyUser(user);
+  }, [user]);
   //
   //
   //

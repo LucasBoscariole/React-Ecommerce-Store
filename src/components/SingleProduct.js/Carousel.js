@@ -9,6 +9,8 @@ import { formatPrice } from '../../data/FeaturedProducts';
 const CarouselSlider = ({ category }) => {
   return (
     <Wrapper>
+      <h3>Similar Products</h3>
+      <div className='underline'></div>
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -72,10 +74,24 @@ export default CarouselSlider;
 
 const Wrapper = styled.article`
   width: 90vw;
-  margin: 1rem auto 2rem auto;
+  margin: 3rem auto 2rem auto;
   z-index: 1;
+  h3 {
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .underline {
+    width: 60%;
+    height: 3px;
+    background: var(--main-color);
+    margin: 0.75rem auto 1.5rem;
+  }
   @media screen and (max-width: 768px) {
     width: 90vw;
+    .underline {
+      width: 90%;
+    }
   }
 `;
 

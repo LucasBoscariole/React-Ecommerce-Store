@@ -13,6 +13,7 @@ import Footer from './pages/Footer';
 import Cart from './pages/Cart';
 import ScrollToTop from './components/ScrollToTop';
 import Checkout from './components/Checkout/Checkout';
+import PrivateRoute from './components/Checkout/PrivateRoute';
 
 function App() {
   return (
@@ -61,11 +62,12 @@ function App() {
             <Cart />
             <Footer />
           </Route>
-          <Route exact path='/checkout'>
+          <PrivateRoute exact path='/checkout'>
             <Navbar />
             <Dropdown />
             <Checkout />
-          </Route>
+            <Footer />
+          </PrivateRoute>
           <Route path='*'>
             <Navbar />
             <Dropdown />
